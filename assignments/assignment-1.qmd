@@ -4,12 +4,73 @@ title: "Assignment 1"
 
 # Assignment 1
 
-```{r}
-1 + 1
-```
-
-My first assignment has two parts.
+My first assignment has three parts.
 
 ## (a)
 
-## (b)
+
+
+
+## (b) Statistical Summaries with Custom Functions and Iteration Methods
+\
+
+```{r}
+data(mtcars)
+
+compute_stats <- function(x) {
+  list<- (c(mean = mean(x), median = median(x), var = var(x), IQR = IQR(x), min = min(x), max = max(x)))
+}
+for (col in names(mtcars)) {
+  cat("Column_name:", col, "\n")
+  print(compute_stats(mtcars[[col]]))
+}
+```
+
+
+```{r}
+#Alternative approach with "sapply"
+sapply(mtcars,compute_stats)
+```
+
+```{r}
+#Alternative approach with "apply"
+apply(mtcars,MARGIN=2,FUN=compute_stats)
+
+```
+
+
+
+## (c) Displaying and Handling the "na_example" Dataset
+```{r}
+
+library(dslabs)
+data(na_example)
+
+
+str(na_example)
+```
+
+```{r}
+NA_count <- sum(is.na(na_example))
+cat("Total Number of NAs:", NA_count)
+
+NA_index_pos <- which(is.na(na_example))
+cat("Index positions of NAs:", NA_index_pos) 
+```
+
+```{r}
+cat("Mean:", mean(na_example,na.rm=TRUE), "Std_dev:", sd(na_example,na.rm=TRUE))
+```
+
+```{r}
+replace_median <- ifelse(is.na(na_example), median(na_example, na.rm = TRUE), na_example)
+cat("version 1 (replaced with median):","\n","Mean:", mean(replace_median), "Std_dev:", sd(replace_median))
+```
+
+```{r}
+replace_random<- ifelse(is.na(na_example), sample(na_example[!is.na(na_example)],replace = TRUE), na_example)
+cat("version 2 (replaced with random_v):","\n","Mean:", mean(replace_random),"Std_dev:", sd(replace_random))
+```
+The median replacement method is better because it is not affected by outliers and keeps the dataset stable. Random replacement adds variability, which can distort the data.
+
+```{r}
