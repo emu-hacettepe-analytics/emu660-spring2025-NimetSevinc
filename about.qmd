@@ -3,7 +3,7 @@ title: "About Me"
 sidebar: false 
 ---
 
-![](images/Nimet Sevinc-01.jpg){fig-align="center" width="156"}
+![](images/Nimet Sevinc-01.jpg){fig-align="left" width="156"}
 
 # Education
 
