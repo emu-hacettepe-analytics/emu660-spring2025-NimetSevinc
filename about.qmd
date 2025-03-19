@@ -28,7 +28,7 @@ sidebar: false
 
 # Competencies
 
-R, Quarto, Git, Python, SQL, Arena Simulation
+R, Quarto, Git, Python, SQL
 
 # Hobbies
 
