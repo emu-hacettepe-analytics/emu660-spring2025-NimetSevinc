@@ -7,3 +7,27 @@ Hello!! My name is "Nimet Nur Sevinç"
 This is my personal webpage.
 
 Please stay tuned to follow my works on data analytics, blog posts, and more.
+
+```{r}
+install.packages("gganimate")
+install.packages("gifski")  # GIF formatına dönüştürmek için
+install.packages("tidyverse")
+library(ggplot2)
+library(gganimate)
+
+# Örnek veri
+time_data <- data.frame(
+  time = rep(1:10, each = 2),
+  value = c(1,2, 2,4, 3,6, 4,8, 5,10, 6,12, 7,14, 8,16, 9,18, 10,20)
+)
+
+# Animasyonlu çizgi grafiği
+p <- ggplot(time_data, aes(x = time, y = value)) +
+  geom_line(size = 1.5, color = "red") +
+  transition_reveal(time) +
+  labs(title = "Time Series Animation", x = "Time", y = "Value")
+
+# Kaydet
+anim_save("line_animation.gif", animate(p))
+
+```
