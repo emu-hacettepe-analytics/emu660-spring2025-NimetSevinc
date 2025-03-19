@@ -2,7 +2,7 @@
 title: "Welcome to My Analytics Lab"
 ---
 
-Hello!! My name is Nimet Nur Sevinc
+Hello!! My name is "Nimet Nur Sevinç"
 
 This is my personal webpage.
 
