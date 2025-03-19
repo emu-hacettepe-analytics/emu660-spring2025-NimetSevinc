@@ -36,5 +36,4 @@ Reading about new technologies, traveling, playing table tennis
 
 
 
-
-[CV] (https://github.com/emu-hacettepe-analytics/emu660-spring2025-NimetSevinc/blob/main/docs/Nimet%20Sevin%C3%A7_CV.pdf)
+[📄 Download My CV](https://github.com/emu-hacettepe-analytics/emu660-spring2025-NimetSevinc/raw/main/docs/Nimet%20Sevin%C3%A7_CV.pdf)
