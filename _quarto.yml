@@ -23,10 +23,8 @@ website:
     tools:
       - icon: github
         href: https://github.com/NimetSevinc
-      - icon: twitter
-        href: https://twitter.com
       - icon: linkedin
-        href: https://linkedin.com
+        href: http://linkedin.com/in/nimet-nur-sevin%C3%A7-69b826247
 
   sidebar:
     - title: "Assignments"
