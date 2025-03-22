@@ -9,5 +9,5 @@ This is my personal webpage.
 Please stay tuned to follow my works on data analytics, blog posts, and more.
 
 ::: {style="position: relative; z-index: 0; text-align: center; opacity: 0.6;"}
-![](https://github.com/emu-hacettepe-analytics/emu660-spring2025-NimetSevinc/blob/8e48435e8b284ae867d2b3d8ac38e22e0f52ec84/images/J5A.gif){style="position: absolute; top: 0; left: 0;" fig-align="center"}
+![](images/J5A.gif){style="position: absolute; top: 0; left: 0;" fig-align="center"}
 :::
