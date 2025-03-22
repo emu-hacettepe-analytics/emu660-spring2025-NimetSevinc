@@ -1,1 +1,10 @@
 /* css styles */
+
+body {
+  background-color: #e0f7fa;
+}
+
+.sidebar .sidebar-header {
+  background-color: #80deea;
+  color: white;
+}
