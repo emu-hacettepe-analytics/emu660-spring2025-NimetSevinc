@@ -8,4 +8,19 @@ This is my personal webpage. 🔹
 
 Please stay tuned to follow my works on data analytics, blog posts, and more..
 
-![](images/GIF.gif){style="object-fit: cover;" width="100%"}
+```{=html}
+<style>
+  .background-gif {
+    position: fixed;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    background-size: cover;
+    background-position: center center;
+    margin: 0;
+  }
+</style>
+```
+
+![](images/GIF.gif){.background-gif}
