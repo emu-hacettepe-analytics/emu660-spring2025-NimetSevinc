@@ -8,4 +8,4 @@ This is my personal webpage. 🔹
 
 Please stay tuned to follow my works on data analytics, blog posts, and more..
 
-![background-gif](images/GIF.gif){.full-screen-gif alt="background-gif" width="100%"}
+![](images/GIF.gif){style="object-fit: cover;" width="100%"}
