@@ -1,6 +1,5 @@
 ---
 title: "Welcome to My Analytics Lab"
-class: index-page
 ---
 
 Hello!! My name is [**Nimet Nur Sevinç**]{style="color: #8B0000;"} 🙃
@@ -9,4 +8,4 @@ This is my personal webpage. 🔹
 
 Please stay tuned to follow my works on data analytics, blog posts, and more..
 
-![](images/GIF.gif){width="100%"}
+![background-gif](images/GIF.gif){.full-screen-gif alt="background-gif" width="100%"}
