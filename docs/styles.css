@@ -1,1 +1,22 @@
 /* css styles */
+
+body.index-page {
+    background-image: url('images/GIF.gif');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+body.index-page .sidebar {
+    display: none;
+}
+
+
+body.index-page main {
+    width: 100%;
+    padding: 0;
+}
