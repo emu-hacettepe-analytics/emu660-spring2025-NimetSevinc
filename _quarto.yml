@@ -26,14 +26,14 @@ website:
       - icon: linkedin
         href: http://linkedin.com/in/nimet-nur-sevin%C3%A7-69b826247
 
-    sidebar:
+  sidebar:
       - title: "Assignments"
         style: "docked"
-      search: true
-      contents:
-        - assignments.qmd
-        - assignments/assignment-1.qmd
-        - assignments/assignment-2.qmd  
+        search: true
+        contents:
+           - assignments.qmd
+           - assignments/assignment-1.qmd
+           - assignments/assignment-2.qmd  
   page-navigation: true
   back-to-top-navigation: true
   page-footer:
