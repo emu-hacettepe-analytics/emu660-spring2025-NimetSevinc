@@ -2,8 +2,10 @@
 title: "Welcome to My Analytics Lab"
 ---
 
-Hello!! My name is [**Nimet Nur Sevinç**]{style="color: #8B0000;"} 🙃
+Hello!! My name is [**Nimet Nur Sevinç**]{style="color: #8B0000;"}
 
 This is my personal webpage. 🔹
 
 Please stay tuned to follow my works on data analytics, blog posts, and more..
+
+![](images/GIF.gif){style="position:fixed; top:0; left:0; opacity:0.43; background-size: cover; margin:0; background-position: top center" width="100%"}

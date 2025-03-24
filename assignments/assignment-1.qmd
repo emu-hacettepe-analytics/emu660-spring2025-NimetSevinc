@@ -1,5 +1,10 @@
 ---
 title: "Assignment 1"
+code-line-numbers: true
+highlight-style:
+ dark: custom-dark.theme
+code-fold: "show"
+code-overflow: "wrap"
 ---
 
 My first assignment has three parts.
@@ -9,7 +14,6 @@ My first assignment has three parts.
 Cem Vardar mentioned the role of industrial engineering in problem-solving processes within complex systems, emphasizing that even complex problems can be solved by starting from simple ones. He stated that data science is a tool in problem-solving, particularly used in improving complex systems. He highlighted the importance of soft skills such as analytical thinking, problem-solving, curiosity, and the ability to establish cause-and-effect relationships. As for technical skills, he stated that probability, statistics, programming, data collection, processing, and visualization are fundamental, and the ability to model develops when it is specialized in the business context.
 
 Lastly, he emphasized the importance of learning general skills such as problem-solving, working with data, understanding data, taking a holistic approach, thinking multidimensionally, and having the ability to learn. He suggested focusing on the problem rather than the tools, the significance of mental models, the Pareto principle, approaching problems through inversion, understanding game theory, and the value of readings.
-
 
 ## (b) Statistical Summaries with Custom Functions and Iteration Methods
 
