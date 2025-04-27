@@ -11,28 +11,28 @@
     "href": "project.html",
     "title": "Project X",
     "section": "",
-    "text": "Welcome to my/our project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
+    "text": "&lt;div style= “display: flex"
   },
   {
     "objectID": "project.html#data-source",
     "href": "project.html#data-source",
     "title": "Project X",
     "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nxxxxxx"
+    "text": "2.1 Data Source\n\nSera Gazı Emisyon İstatistikleri"
   },
   {
     "objectID": "project.html#general-information-about-data",
     "href": "project.html#general-information-about-data",
     "title": "Project X",
     "section": "2.2 General Information About Data",
-    "text": "2.2 General Information About Data\nxxxxxx"
+    "text": "2.2 General Information About Data\nyıllar içerisindeki toplam ve kişi başı sera gazı emisyon istatistikleri, sektör bazlı sera gazı emisyonları yer almaktadır."
   },
   {
     "objectID": "project.html#reason-of-choice",
     "href": "project.html#reason-of-choice",
     "title": "Project X",
     "section": "2.3 Reason of Choice",
-    "text": "2.3 Reason of Choice\nxxxxxx"
+    "text": "2.3 Reason of Choice\nBu çalışma, enerji ve iklim politikalarına bağlı olarak sürdürülebilir kalkınma hedeflerine katkı sunmak amacıyla seçilmiştir.\nKarbonsuz büyümenin ne kadar münkün olabileceği, Türkiye’nin yıllar içindeki eğilimin bu hedefler ile ne kadar uyumlu olduğu/olabileceği gibi sorulara ışık tutabilmek için enerji, çevre ve toplum bakış açısında özellikle küresel ısınmanın büyük çoğunluğunu oluşturduğu için farkındalık yaratmak amacıyla bu konu seçilmiştir."
   },
   {
     "objectID": "project.html#preprocessing",

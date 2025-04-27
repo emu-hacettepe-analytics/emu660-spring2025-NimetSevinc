@@ -3,7 +3,7 @@ title: "About Me"
 sidebar: false 
 ---
 
-![](images/Nimet Sevinc-01.jpg){fig-align="left" width="156"}
+![](images/Nimet%20Sevinc-01.jpg){fig-align="left" width="156"}
 
 # Education
 
@@ -34,9 +34,4 @@ R, Quarto, Git, Python, SQL
 
 📖 Reading about new technologies, 🧳 traveling, 🏓 playing table tennis
 
-
-
-📄 [CV](images/Nimet Sevinç_CV.pdf)
-
-
-
+📄 [CV](images/Nimet%20Sevinç_CV.pdf)

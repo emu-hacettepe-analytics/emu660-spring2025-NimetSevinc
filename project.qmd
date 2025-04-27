@@ -2,31 +2,42 @@
 title: "Project X"
 ---
 
-Welcome to my/our project page.
+## **The Sustainability Goal in Turkiye: Energy, Emissions, and the Future**
 
-Keep an eye on this space to stay updated with my project activities.
-
-(The titles below are provided as examples; please feel free to adjust them as necessary.)
+![](images/clipboard-3102249289.png){style="opacity:0.7" width="411"}
 
 # 1. Project Overview and Scope
 
-xxxxxx
+> Energy production and consumption are among the primary drivers of climate change, as they are major sources of carbon emissions. The continuous rise in energy demand, fueled by economic growth and industrialization, directly accelerates carbon emissions. In this study, we aim to investigate the relationship between energy consumption and carbon emissions originating from the energy sector in Turkey over the years.
+>
+> First, correlation and regression analyses will be conducted to reveal the linear relationship between energy consumption and carbon emissions. Then, time series analysis will be applied to evaluate the trends of emissions and energy consumption over the years, the sectoral distribution of carbon emissions from the energy sector will also be examined, with a particular focus on emissions from electricity generation due to its dominant share.\
+> Additionally, the relationships between key indicators—such as energy intensity (primary energy consumption/GDP), per capita energy consumption, and per capita carbon emissions—will be analyzed to assess the potential for decoupling carbon emissions from economic growth.
 
 # 2. Data
 
-xxxxxx
-
 ## 2.1 Data Source
 
-xxxxxx
+-   [Sera Gazı Emisyon İstatistikleri](https://data.tuik.gov.tr/Bulten/Index?p=Sera-Gazi-Emisyon-Istatistikleri-1990-2023-53974)
+
+-   [Gayri Safi Yurtiçi Hasıla ve Kişi Başına Gayri Safi Yurtiçi Hasıla](https://data.tuik.gov.tr/Kategori/GetKategori?p=ulusal-hesaplar-113)
+
+-   [IEA Türkiye Enerji İstatistikleri](https://www.iea.org/countries/turkiye/energy-mix)
+
+-   [IEA Enerji Kaynaklı Emisyonlar](https://www.iea.org/countries/turkiye/emissions)
+
+-   [IEA Elektrik Üretim ve Tüketim Verileri](https://www.iea.org/countries/turkiye/electricity)
+
+-   [IEA Türkiye Yenilenebilir Enerji Kaynakları Verisi](https://www.iea.org/countries/turkiye/renewables)
 
 ## 2.2 General Information About Data
 
-xxxxxx
+The data obtained from TÜİK provide information on the sectoral distribution of carbon emissions in Türkiye over the years, as well as GDP figures necessary for calculating energy intensity. Additionally, the data gathered from the IEA include Türkiye's total primary energy supply, annual energy amounts by source, energy-related carbon emissions, the carbon intensity of the energy mix, per capita carbon emissions, electricity generation and consumption figures, and the share of renewable energy sources in electricity generation.
 
 ## 2.3 Reason of Choice
 
-xxxxxx
+This study has been selected with the aim of contributing to sustainable development goals in line with energy and climate policies.\
+In order to shed light on the extent to which carbon-free growth is achievable and how Turkey's trends over the years align with these goals, this topic has been chosen from the perspectives of energy, environment, and society, particularly given that energy-related emissions constitute a major portion of global warming.\
+Raising awareness on this issue is also one of the primary motivations behind the study.
 
 ## 2.4 Preprocessing
 
