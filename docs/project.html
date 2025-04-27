@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -35,12 +69,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,10 +102,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="docked nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -119,10 +150,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools tools-wide">
+            <div class="quarto-navbar-tools">
     <a href="https://github.com/NimetSevinc" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <a href="http://linkedin.com/in/nimet-nur-sevin%C3%A7-69b826247" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -130,34 +160,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#project-overview-and-scope" id="toc-project-overview-and-scope" class="nav-link active" data-scroll-target="#project-overview-and-scope">1. Project Overview and Scope</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">2. Data</a>
-  <ul class="collapse">
-  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">2.1 Data Source</a></li>
-  <li><a href="#general-information-about-data" id="toc-general-information-about-data" class="nav-link" data-scroll-target="#general-information-about-data">2.2 General Information About Data</a></li>
-  <li><a href="#reason-of-choice" id="toc-reason-of-choice" class="nav-link" data-scroll-target="#reason-of-choice">2.3 Reason of Choice</a></li>
-  <li><a href="#preprocessing" id="toc-preprocessing" class="nav-link" data-scroll-target="#preprocessing">2.4 Preprocessing</a></li>
-  </ul></li>
-  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">3. Analysis</a>
-  <ul class="collapse">
-  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis">3.1 Exploratory Data Analysis</a></li>
-  <li><a href="#trend-analysis" id="toc-trend-analysis" class="nav-link" data-scroll-target="#trend-analysis">3.2 Trend Analysis</a></li>
-  <li><a href="#model-fitting" id="toc-model-fitting" class="nav-link" data-scroll-target="#model-fitting">3.3 Model Fitting</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">3.4 Results</a></li>
-  </ul></li>
-  <li><a href="#results-and-key-takeaways" id="toc-results-and-key-takeaways" class="nav-link" data-scroll-target="#results-and-key-takeaways">4. Results and Key Takeaways</a></li>
-  </ul>
-</nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -214,7 +218,441 @@ Raising awareness on this issue is also one of the primary motivations behind th
 </section>
 <section id="preprocessing" class="level2">
 <h2 class="anchored" data-anchor-id="preprocessing">2.4 Preprocessing</h2>
-<p>xxxxxx</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.4.3</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readxl' was built under R version 4.4.3</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Co2_emissions_by_sector <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - CO2 emissions by sector in Türkiye.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"CO2 emissions by sector"</span> <span class="ot">=</span> <span class="st">"CO2 emissions by sector in Türkiye"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 207 Columns: 4</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): CO2 emissions by sector in Türkiye, Units
+dbl (2): Value, Year
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Co2_emissions_by_sector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [207 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ CO2 emissions by sector: chr [1:207] "Electricity and heat producers" "Electricity and heat producers" "Electricity and heat producers" "Electricity and heat producers" ...
+ $ Value                  : num [1:207] 68.4 69.8 64.5 65.5 66.6 ...
+ $ Year                   : num [1:207] 2000 2001 2002 2003 2004 ...
+ $ Units                  : chr [1:207] "Mt CO2" "Mt CO2" "Mt CO2" "Mt CO2" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   `CO2 emissions by sector in Türkiye` = col_character(),
+  ..   Value = col_double(),
+  ..   Year = col_double(),
+  ..   Units = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Co2_emissions_fuel_combustion <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - CO2 emissions from fuel combustion, Türkiye (1).csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"CO2 emissions from fuel combustion"</span> <span class="ot">=</span> <span class="st">"CO2 emissions from fuel combustion, Türkiye"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 23 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Units
+dbl (2): Year, CO2 emissions from fuel combustion, Türkiye
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Co2_emissions_fuel_combustion)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [23 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Year                              : num [1:23] 2000 2001 2002 2003 2004 ...
+ $ CO2 emissions from fuel combustion: num [1:23] 201 183 193 203 207 ...
+ $ Units                             : chr [1:23] "Mt CO2" "Mt CO2" "Mt CO2" "Mt CO2" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Year = col_double(),
+  ..   `CO2 emissions from fuel combustion, Türkiye` = col_double(),
+  ..   Units = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>Co2_emissions_per_capita <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - CO2 emissions per capita, Türkiye.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"CO2 emissions per capita"</span> <span class="ot">=</span> <span class="st">"CO2 emissions per capita, Türkiye"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 23 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Units
+dbl (2): Year, CO2 emissions per capita, Türkiye
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Co2_emissions_per_capita)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [23 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Year                    : num [1:23] 2000 2001 2002 2003 2004 ...
+ $ CO2 emissions per capita: num [1:23] 3.13 2.8 2.92 3.04 3.07 ...
+ $ Units                   : chr [1:23] "tCO2 / Capita" "tCO2 / Capita" "tCO2 / Capita" "tCO2 / Capita" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Year = col_double(),
+  ..   `CO2 emissions per capita, Türkiye` = col_double(),
+  ..   Units = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>electricity_cons_per_capita <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - Electricity consumption per capita, Türkiye.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"electricity consumption per capita"</span> <span class="ot">=</span> <span class="st">"Electricity consumption per capita, Türkiye"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 24 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Units
+dbl (2): Year, Electricity consumption per capita, Türkiye
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(electricity_cons_per_capita)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [24 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Year                              : num [1:24] 2000 2001 2002 2003 2004 ...
+ $ electricity consumption per capita: num [1:24] 1.63 1.59 1.65 1.75 1.88 ...
+ $ Units                             : chr [1:24] "MWh / Capita" "MWh / Capita" "MWh / Capita" "MWh / Capita" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Year = col_double(),
+  ..   `Electricity consumption per capita, Türkiye` = col_double(),
+  ..   Units = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>electricity_final_consumption <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - electricity final consumption by sector in Türkiye.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"electricity final consumption"</span> <span class="ot">=</span> <span class="st">"electricity final consumption by sector in Türkiye"</span>) <span class="sc">|&gt;</span> <span class="fu">na.omit</span>(electricity_final_consumption)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 138 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): electricity final consumption by sector in Türkiye, Units
+dbl (2): Value, Year
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(electricity_final_consumption)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [134 × 4] (S3: tbl_df/tbl/data.frame)
+ $ electricity final consumption: chr [1:134] "Industry" "Industry" "Industry" "Industry" ...
+ $ Value                        : num [1:134] 165920 161992 175953 193309 208951 ...
+ $ Year                         : num [1:134] 2000 2001 2002 2003 2004 ...
+ $ Units                        : chr [1:134] "TJ" "TJ" "TJ" "TJ" ...
+ - attr(*, "na.action")= 'omit' Named int [1:4] 116 117 118 119
+  ..- attr(*, "names")= chr [1:4] "116" "117" "118" "119"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(electricity_final_consumption))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>electricity_generation_sources <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - electricity generation sources in Türkiye.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"electricity generation sources"</span> <span class="ot">=</span> <span class="st">"electricity generation sources in Türkiye"</span>) <span class="sc">|&gt;</span> <span class="fu">na.omit</span>(electricity_generation_sources)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 240 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): electricity generation sources in Türkiye, Units
+dbl (2): Value, Year
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(electricity_generation_sources)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [226 × 4] (S3: tbl_df/tbl/data.frame)
+ $ electricity generation sources: chr [1:226] "Coal" "Coal" "Coal" "Coal" ...
+ $ Value                         : num [1:226] 38187 38416 32149 32252 34448 ...
+ $ Year                          : num [1:226] 2000 2001 2002 2003 2004 ...
+ $ Units                         : chr [1:226] "GWh" "GWh" "GWh" "GWh" ...
+ - attr(*, "na.action")= 'omit' Named int [1:14] 169 170 171 172 173 174 175 176 177 178 ...
+  ..- attr(*, "names")= chr [1:14] "169" "170" "171" "172" ...</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>renewables <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - Renewables share of electricity generation, Türkiye.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"renewables share of electricity generation"</span> <span class="ot">=</span> <span class="st">"Renewables share of electricity generation, Türkiye"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 23 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Units
+dbl (2): Year, Renewables share of electricity generation, Türkiye
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(renewables)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [23 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Year                                      : num [1:23] 2000 2001 2002 2003 2004 ...
+ $ renewables share of electricity generation: num [1:23] 24.9 19.8 26.2 25.3 30.7 24.5 25.3 19 17.3 19.6 ...
+ $ Units                                     : chr [1:23] "%" "%" "%" "%" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Year = col_double(),
+  ..   `Renewables share of electricity generation, Türkiye` = col_double(),
+  ..   Units = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>modern_renewables <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - Share of modern renewables in final energy consumption (SDG 7.2), Türkiye (1).csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"modern renewables"</span> <span class="ot">=</span> <span class="st">"Share of modern renewables in final energy consumption (SDG 7.2), Türkiye"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 22 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Units
+dbl (2): Year, Share of modern renewables in final energy consumption (SDG 7...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(modern_renewables)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [22 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Year             : num [1:22] 2000 2001 2002 2003 2004 ...
+ $ modern renewables: num [1:22] 17.3 18.1 17.5 16.3 16.8 ...
+ $ Units            : chr [1:22] "%" "%" "%" "%" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Year = col_double(),
+  ..   `Share of modern renewables in final energy consumption (SDG 7.2), Türkiye` = col_double(),
+  ..   Units = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>electricity_production <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - Total electricity production, Türkiye.csv"</span>) <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="st">"total electricity production"</span> <span class="ot">=</span> <span class="st">"Total electricity production, Türkiye"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 24 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): Units
+dbl (2): Year, Total electricity production, Türkiye
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(electricity_production)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [24 × 3] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ Year                        : num [1:24] 2000 2001 2002 2003 2004 ...
+ $ total electricity production: num [1:24] 124922 122725 129400 140581 150698 ...
+ $ Units                       : chr [1:24] "GWh" "GWh" "GWh" "GWh" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   Year = col_double(),
+  ..   `Total electricity production, Türkiye` = col_double(),
+  ..   Units = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>total_energy_supply <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - total energy supply in Türkiye (2).csv"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"total energy supply"</span> <span class="ot">=</span> <span class="st">"total energy supply in Türkiye"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 144 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): total energy supply in Türkiye, Units
+dbl (2): Value, Year
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(total_energy_supply)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [144 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ total energy supply: chr [1:144] "Coal" "Coal" "Coal" "Coal" ...
+ $ Value              : num [1:144] 956056 789821 820271 923904 930636 ...
+ $ Year               : num [1:144] 2000 2001 2002 2003 2004 ...
+ $ Units              : chr [1:144] "TJ" "TJ" "TJ" "TJ" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   `total energy supply in Türkiye` = col_character(),
+  ..   Value = col_double(),
+  ..   Year = col_double(),
+  ..   Units = col_character()
+  .. )
+ - attr(*, "problems")=&lt;externalptr&gt; </code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>gdp_per_capita <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/gdp_per_capita.xlsx"</span>)  </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>gdp_per_capita <span class="ot">&lt;-</span> gdp_per_capita <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ncol</span>(gdp_per_capita),<span class="sc">-</span>(<span class="fu">ncol</span>(gdp_per_capita)<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gdp_per_capita)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [27 × 4] (S3: tbl_df/tbl/data.frame)
+ $ Year               : chr [1:27] "1998" "1999" "2000" "2001" ...
+ $ mid_year_population: num [1:27] 62464 63364 64269 65166 66003 ...
+ $ Value (TRY)        : num [1:27] 1152 1695 2668 3794 5486 ...
+ $ change_rate_try    : chr [1:27] "-" "47.125712213558103" "57.467281288589533" "42.198751767167977" ...</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>emissions_by_sector <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/sektorlere gore toplam sera gazi emisyonlari (co2 esdegeri) (1).xlsx"</span>)  </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>emissions_by_sector <span class="ot">&lt;-</span> emissions_by_sector <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span><span class="dv">3</span>)</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(emissions_by_sector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [34 × 6] (S3: tbl_df/tbl/data.frame)
+ $ Year                                : num [1:34] 1990 1991 1992 1993 1994 ...
+ $ Total                               : num [1:34] 228 236 242 250 243 ...
+ $ Energy                              : num [1:34] 143 148 154 160 157 ...
+ $ Industrial processes and product use: num [1:34] 23.1 24.9 24.6 25.1 24.5 ...
+ $ Agriculture                         : num [1:34] 51.8 52.9 52.7 52.8 50.3 ...
+ $ Waste                               : num [1:34] 10.3 10.7 11 11.3 11.7 ...</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>emissions <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/sera gazi emisyonlari (co2 esdegeri).xlsx"</span>)  </span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(emissions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [34 × 6] (S3: tbl_df/tbl/data.frame)
+ $ 
+Year   : num [1:34] 1990 1991 1992 1993 1994 ...
+ $ 
+Total  : num [1:34] 228 236 242 250 243 ...
+ $ CO2        : num [1:34] 155 161 167 174 171 ...
+ $ CH4        : num [1:34] 51.3 52.3 52.2 51.8 51.3 ...
+ $ N2O        : num [1:34] 22.2 22 22.4 23.2 20.9 ...
+ $ 
+F-gases: num [1:34] 0.425 0.5 0.467 0.466 0.417 ...</code></pre>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(Co2_emissions_by_sector, Co2_emissions_fuel_combustion, Co2_emissions_per_capita, electricity_cons_per_capita, electricity_final_consumption, electricity_generation_sources, renewables, modern_renewables, electricity_production, total_energy_supply,gdp_per_capita, emissions_by_sector, emissions, <span class="at">file=</span><span class="st">"emissions.RData"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 </section>
 <section id="analysis" class="level1">
@@ -265,150 +703,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
