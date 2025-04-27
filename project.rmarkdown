@@ -5,6 +5,9 @@ format:
     code-fold: true
 ---
 
+
+
+
 ![](images/Energy.jpg){style="opacity:0.7" width="554"}
 
 # 1. Project Overview and Scope
@@ -43,6 +46,9 @@ Raising awareness on this issue is also one of the primary motivations behind th
 ## 2.4 Preprocessing
 
 [Emissions.RData](https://github.com/emu-hacettepe-analytics/emu660-spring2025-NimetSevinc/blob/main/emissions.RData)
+
+
+
 
 ```{r}
 
@@ -140,6 +146,9 @@ str(emissions)
 save(Co2_emissions_by_sector, Co2_emissions_fuel_combustion, Co2_emissions_per_capita, electricity_cons_per_capita, electricity_final_consumption, electricity_generation_sources, renewables, modern_renewables, electricity_production, total_energy_supply,gdp_per_capita, emissions_by_sector, emissions, file="emissions.RData")
 ```
 
+
+
+
 # 3. Analysis
 
 xxxxxx
@@ -163,3 +172,4 @@ xxxxxx
 # 4. Results and Key Takeaways
 
 xxxxxx
+
