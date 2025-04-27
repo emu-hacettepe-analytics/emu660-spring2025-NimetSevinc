@@ -42,6 +42,8 @@ Raising awareness on this issue is also one of the primary motivations behind th
 
 ## 2.4 Preprocessing
 
+[Emissions.RData](https://github.com/emu-hacettepe-analytics/emu660-spring2025-NimetSevinc/blob/main/emissions.RData)
+
 ```{r}
 
 library(readr)
