@@ -2,7 +2,7 @@
 title: "Sustainability Goals in Türkiye: Energy, Emissions, and the Future"
 ---
 
-![](images/clipboard-3102249289.png){style="opacity:0.7" width="411"}
+![](images/Energy.jpg){style="opacity:0.7" width="440"}
 
 # 1. Project Overview and Scope
 
@@ -39,7 +39,102 @@ Raising awareness on this issue is also one of the primary motivations behind th
 
 ## 2.4 Preprocessing
 
-xxxxxx
+```{r}
+install.packages("readr")
+install.packages("readxl")
+library(readr)
+library(readxl)
+library(dplyr)
+
+Co2_emissions_by_sector <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - CO2 emissions by sector in Türkiye.csv") |> rename("CO2 emissions by sector" = "CO2 emissions by sector in Türkiye")
+
+str(Co2_emissions_by_sector)
+```
+
+```{r}
+Co2_emissions_fuel_combustion <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - CO2 emissions from fuel combustion, Türkiye (1).csv") |> rename("CO2 emissions from fuel combustion" = "CO2 emissions from fuel combustion, Türkiye")
+
+str(Co2_emissions_fuel_combustion)
+
+```
+
+```{r}
+Co2_emissions_per_capita <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - CO2 emissions per capita, Türkiye.csv") |> rename("CO2 emissions per capita" = "CO2 emissions per capita, Türkiye")
+
+str(Co2_emissions_per_capita)
+```
+
+```{r}
+electricity_cons_per_capita <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - Electricity consumption per capita, Türkiye.csv") |> rename("electricity consumption per capita" = "Electricity consumption per capita, Türkiye")
+
+str(electricity_cons_per_capita)
+```
+
+```{r}
+electricity_final_consumption <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - electricity final consumption by sector in Türkiye.csv") |> rename("electricity final consumption" = "electricity final consumption by sector in Türkiye") |> na.omit(electricity_final_consumption)
+
+str(electricity_final_consumption)
+sum(is.na(electricity_final_consumption))
+```
+
+```{r}
+electricity_generation_sources <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - electricity generation sources in Türkiye.csv") |> rename("electricity generation sources" = "electricity generation sources in Türkiye") |> na.omit(electricity_generation_sources)
+
+str(electricity_generation_sources)
+```
+
+```{r}
+renewables <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - Renewables share of electricity generation, Türkiye.csv") |> rename("renewables share of electricity generation" = "Renewables share of electricity generation, Türkiye")
+
+str(renewables)
+```
+
+```{r}
+modern_renewables <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - Share of modern renewables in final energy consumption (SDG 7.2), Türkiye (1).csv") |> rename("modern renewables" = "Share of modern renewables in final energy consumption (SDG 7.2), Türkiye")
+
+str(modern_renewables)
+```
+
+```{r}
+electricity_production <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - Total electricity production, Türkiye.csv") |> rename("total electricity production" = "Total electricity production, Türkiye")
+
+str(electricity_production)
+```
+
+```{r}
+total_energy_supply <- read_csv("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/International Energy Agency - total energy supply in Türkiye (2).csv") |> 
+  rename("total energy supply" = "total energy supply in Türkiye")
+
+str(total_energy_supply)
+```
+
+```{r}
+gdp_per_capita <- read_excel("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/gdp_per_capita.xlsx")  
+  
+gdp_per_capita <- gdp_per_capita |> select(-ncol(gdp_per_capita),-(ncol(gdp_per_capita)-1)
+  )
+
+str(gdp_per_capita)
+```
+
+```{r}
+emissions_by_sector <- read_excel("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/sektorlere gore toplam sera gazi emisyonlari (co2 esdegeri) (1).xlsx")  
+  
+emissions_by_sector <- emissions_by_sector |> select(-3)
+  
+
+str(emissions_by_sector)
+```
+
+```{r}
+emissions <- read_excel("C:/Users/DELL/Documents/GitHub/emu660-spring2025-NimetSevinc/project_data/sera gazi emisyonlari (co2 esdegeri).xlsx")  
+
+str(emissions)
+```
+
+```{r}
+save(Co2_emissions_by_sector, Co2_emissions_fuel_combustion, Co2_emissions_per_capita, electricity_cons_per_capita, electricity_final_consumption, electricity_generation_sources, renewables, modern_renewables, electricity_production, total_energy_supply,gdp_per_capita, emissions_by_sector, emissions, file="emissions.RData")
+```
 
 # 3. Analysis
 
