@@ -544,6 +544,8 @@ ggplot(total_emission, aes(Year,total_emissions, color=Source))+
 > In this regression model, the relationship between electricity generation from coal and total carbon emissions is examined. Every 1,000 GWh of coal-based electricity generation corresponds to approximately 3 MtCO₂ of emissions.
 
 ```{r, warning=FALSE, message=FALSE}
+library(broom)
+
 coal_data <- electricity_generation_sources |>
   filter(`Electricity generation sources (GWh)` == "Coal") |> filter(!Year %in% 2023) |>
   select(Year, Coal_GWh = Value)
@@ -552,14 +554,13 @@ regression_data <- master_data |> select(Year,`Renewables share of electricity g
 regression_data_extended <- regression_data |>
   left_join(coal_data, by = "Year")
 
-regres_1 <- lm(Emission ~Coal_GWh, data=regression_data_extended)
+regres_1 <- lm(Total.x ~Coal_GWh, data=regression_data_extended)
 
-tidy(regres_1)
 
 regres_1 |> glance() |> pull(r.squared)
 regres_1 |> glance() |> pull(sigma)
 
-ggplot(regression_data_extended, aes(x = Coal_GWh, y=Emission)) +
+ggplot(regression_data_extended, aes(x = Coal_GWh, y=Total.x)) +
   geom_point() + geom_smooth(method = "lm", se = TRUE, color = "blue", size = 1) + ggtitle("Emission & Coal Relation")
   # geom_point(data=prediction_data, shape=15, size=2,color="red") + 
 ```
@@ -570,12 +571,11 @@ ggplot(regression_data_extended, aes(x = Coal_GWh, y=Emission)) +
 
 library(broom)
 library(dplyr)
-regres_2 <- lm(Emission ~ Coal_GWh +`Renewables share of electricity generation (%)` ,data=regression_data_extended)
+library(tidyverse)
+regres_2 <- lm(Total.x ~ Coal_GWh +`Renewables share of electricity generation (%)` ,data=regression_data_extended)
 
 
-tidy_regres_2 <- tidy(regres_2)
-tidy_regres_2
-
+summary(regres_2)
 ```
 
 ## 3.3 Model Fitting
@@ -613,7 +613,7 @@ autoplot(forecast_2030) +
 > Although the share of renewables increases, emissions tend to remain stable or even rise unless coal production is significantly reduced.
 
 ```{r, warning=FALSE, message=FALSE}
-prediction = lm(Emission ~ Coal_GWh +`Renewables share of electricity generation (%)`, data=regression_data_extended) 
+prediction = lm(Total.x ~ Coal_GWh +`Renewables share of electricity generation (%)`, data=regression_data_extended) 
 
 fitted_values <- predict(prediction)
 
